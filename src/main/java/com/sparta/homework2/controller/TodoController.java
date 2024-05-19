@@ -16,7 +16,6 @@ public class TodoController {
 
     public final TodoService todoService;
 
-    //TODO 일정 작성
     @PostMapping
     public ResponseEntity<TodoResponseDTO> postTodo(@RequestBody TodoRequestDTO dto) {
         Todo todo = todoService.createTodo(dto);
@@ -38,5 +37,13 @@ public class TodoController {
                 .map(TodoResponseDTO::new)
                 .collect(Collectors.toList());
         return ResponseEntity.ok().body(response);
+    }
+
+    @PutMapping("/{todoId}")
+    public ResponseEntity<TodoResponseDTO> putTodo(@PathVariable long todoId, @RequestBody TodoRequestDTO dto) {
+        Todo todo = todoService.updateTodo(todoId,dto);
+        TodoResponseDTO response = new TodoResponseDTO(todo);
+        return ResponseEntity.ok().body(response);
+
     }
 }
