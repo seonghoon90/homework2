@@ -4,7 +4,10 @@ import com.sparta.homework2.controller.TodoRequestDTO;
 import com.sparta.homework2.repository.Todo;
 import com.sparta.homework2.repository.TodoRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -22,5 +25,10 @@ public class TodoService {
         return todoRepository.findById(todoId)
                 .orElseThrow(IllegalArgumentException::new);
 
+    }
+
+    // 할일 전체 조회
+    public List<Todo> getTodos() {
+        return todoRepository.findAll(Sort.by("createdAt").descending());
     }
 }
