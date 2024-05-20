@@ -1,16 +1,16 @@
 # 나만의 일정 관리 앱 서버 만들기
 
-Use Case Diagram
+## Use Case Diagram
 
 ![image](https://github.com/seonghoon90/homework2/assets/165642393/9696ea0f-b17f-4cf5-999f-f303f01e1103)
 
 
-API 명세서
+## API 명세서
 
 ![image](https://github.com/seonghoon90/homework2/assets/165642393/f39b6ef3-0bfc-4d01-9dce-ca8422c2a04c)
 
 
-ERD
+## ERD
 
 ![image](https://github.com/seonghoon90/homework2/assets/165642393/476c361b-33d1-4bf5-a875-6ba6a1810c77)
 
