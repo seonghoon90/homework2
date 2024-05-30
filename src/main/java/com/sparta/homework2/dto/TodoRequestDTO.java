@@ -1,10 +1,8 @@
-package com.sparta.homework2.controller;
+package com.sparta.homework2.dto;
 
-import com.sparta.homework2.repository.Todo;
+import com.sparta.homework2.entity.Todo;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter

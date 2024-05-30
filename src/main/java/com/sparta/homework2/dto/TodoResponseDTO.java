@@ -1,6 +1,6 @@
-package com.sparta.homework2.controller;
+package com.sparta.homework2.dto;
 
-import com.sparta.homework2.repository.Todo;
+import com.sparta.homework2.entity.Todo;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,7 +21,6 @@ public class TodoResponseDTO {
     private LocalDateTime createdAt;
 
     public TodoResponseDTO(Todo todo){
-        this.todoId = todo.getTodoId();
         this.title = todo.getTitle();
         this.content = todo.getContent();
         this.userName = todo.getUserName();

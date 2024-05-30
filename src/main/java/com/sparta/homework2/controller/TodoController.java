@@ -1,6 +1,8 @@
 package com.sparta.homework2.controller;
 
-import com.sparta.homework2.repository.Todo;
+import com.sparta.homework2.dto.TodoRequestDTO;
+import com.sparta.homework2.dto.TodoResponseDTO;
+import com.sparta.homework2.entity.Todo;
 import com.sparta.homework2.service.TodoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

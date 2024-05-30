@@ -24,6 +24,14 @@ public class Comment {
     private LocalDateTime createdAt;
 
     @ManyToOne
-    @JoinColumn(name = "todo_id", nullable = false)
+    @JoinColumn(name = "todo_id")
     private Todo todo;
+
+    public Comment(Todo todo, CommentRequestDTO commentRequestDTO) {
+        this.comment = commentRequestDTO.getComment();
+        this.userName = commentRequestDTO.getUserName();
+        this.createdAt = LocalDateTime.now();
+        this.todo = todo;
+
+    }
 }

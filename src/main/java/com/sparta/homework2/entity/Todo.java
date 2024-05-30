@@ -1,4 +1,4 @@
-package com.sparta.homework2.repository;
+package com.sparta.homework2.entity;
 
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -6,10 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
 @NoArgsConstructor
+@Table(name = "todo")
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
