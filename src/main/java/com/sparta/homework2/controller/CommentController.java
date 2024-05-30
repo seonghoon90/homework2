@@ -19,6 +19,11 @@ public class CommentController {
 
         return commentService.createComment(todoId, requestDTO);
     }
+    @PutMapping("/{todoId}/{commentId}")
+    public CommentResponseDTO updateComment(@PathVariable Long todoId, @PathVariable Long commentId, @RequestBody CommentRequestDTO requestDTO){
+
+        return commentService.updateComment(todoId,commentId, requestDTO);
+    }
 
 
 }

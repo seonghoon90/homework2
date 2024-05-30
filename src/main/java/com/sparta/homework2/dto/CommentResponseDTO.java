@@ -9,12 +9,12 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 public class CommentResponseDTO {
-    private String userName;
+    private Long userId;
     private String comment;
     private LocalDateTime createdAt;
 
     public CommentResponseDTO(Comment comment) {
-        this.userName = comment.getUserName();
+        this.userId = comment.getUserId();
         this.comment = comment.getComment();
         this.createdAt = comment.getCreatedAt();
     }

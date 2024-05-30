@@ -20,7 +20,7 @@ public class Comment {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long commentId;
     private String comment;
-    private String userName;
+    private Long userId;
     private LocalDateTime createdAt;
 
     @ManyToOne
@@ -29,9 +29,13 @@ public class Comment {
 
     public Comment(Todo todo, CommentRequestDTO commentRequestDTO) {
         this.comment = commentRequestDTO.getComment();
-        this.userName = commentRequestDTO.getUserName();
+        this.userId = commentRequestDTO.getUserId();
         this.createdAt = LocalDateTime.now();
         this.todo = todo;
 
+    }
+
+    public void updateComment(CommentRequestDTO requestDTO){
+        this.comment = requestDTO.getComment();
     }
 }

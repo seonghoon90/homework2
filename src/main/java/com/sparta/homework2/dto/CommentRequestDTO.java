@@ -11,5 +11,6 @@ import lombok.Setter;
 public class CommentRequestDTO {
     @NotEmpty
     private String comment;
-    private String userName;
+    private Long userId;
+    private Long todoId;
 }
