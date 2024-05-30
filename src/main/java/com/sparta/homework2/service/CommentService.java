@@ -48,4 +48,22 @@ public class CommentService {
         }
         return new CommentResponseDTO(comment);
     }
+
+    public void deleteComment(Long todoId, Long commentId, Long userId) {
+
+        Todo todo = todoRepository.findById(todoId).orElseThrow(
+                () -> new IllegalArgumentException("선택한 일정이 없습니다.")
+        );
+        Comment comment = commentRepository.findById(commentId).orElseThrow(
+                () -> new IllegalArgumentException("조회한 댓글이 없습니다.")
+        );
+
+        if (comment.getUserId().equals(userId)) {
+            commentRepository.delete(comment);
+        } else {
+            throw new IllegalArgumentException("사용자 ID가 일치하지 않습니다.");
+
+        }
+
+    }
 }

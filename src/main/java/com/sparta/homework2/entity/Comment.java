@@ -1,6 +1,7 @@
 package com.sparta.homework2.entity;
 
 import com.sparta.homework2.dto.CommentRequestDTO;
+import com.sparta.homework2.dto.CommentResponseDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,4 +39,5 @@ public class Comment {
     public void updateComment(CommentRequestDTO requestDTO){
         this.comment = requestDTO.getComment();
     }
+
 }
