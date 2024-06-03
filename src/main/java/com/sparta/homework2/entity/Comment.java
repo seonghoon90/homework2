@@ -1,16 +1,15 @@
 package com.sparta.homework2.entity;
 
 import com.sparta.homework2.dto.CommentRequestDTO;
-import com.sparta.homework2.dto.CommentResponseDTO;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-@RestController
 @Entity
 @Getter
 @Setter
@@ -20,8 +19,14 @@ public class Comment {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long commentId;
+
+    @NotEmpty(message = "공백이거나 null인 것은 불가합니다.")
     private String comment;
+
+    @Column(length = 100)
+    @Email
     private Long userId;
+
     private LocalDateTime createdAt;
 
     @ManyToOne

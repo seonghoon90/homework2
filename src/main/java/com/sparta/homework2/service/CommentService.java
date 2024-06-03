@@ -31,7 +31,7 @@ public class CommentService {
 
 
     @Transactional
-    public CommentResponseDTO updateComment(Long todoId,Long commentId, CommentRequestDTO requestDTO) {
+    public CommentResponseDTO updateComment(Long todoId, Long commentId, CommentRequestDTO requestDTO) {
         Todo todo = todoRepository.findById(todoId).orElseThrow(
                 () -> new IllegalArgumentException("선택한 일정이 없습니다.")
         );
@@ -40,7 +40,7 @@ public class CommentService {
                 () -> new IllegalArgumentException("조회한 댓글이 없습니다.")
         );
 
-        if(comment.getUserId().equals(requestDTO.getUserId())){
+        if (comment.getUserId().equals(requestDTO.getUserId())) {
             comment.updateComment(requestDTO);
         } else {
             throw new IllegalArgumentException("사용자 ID가 일치하지 않습니다.");

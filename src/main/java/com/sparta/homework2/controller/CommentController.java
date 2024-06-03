@@ -11,24 +11,24 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1.0/comment")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class CommentController {
 
     private final CommentService commentService;
 
-    @PostMapping("/{todoId}")
+    @PostMapping("/comment/{todoId}")
     public CommentResponseDTO createComment(@PathVariable Long todoId, @RequestBody @Valid CommentRequestDTO requestDTO){
 
         return commentService.createComment(todoId, requestDTO);
     }
-    @PutMapping("/{todoId}/{commentId}")
+    @PutMapping("/comment/{todoId}/{commentId}")
     public CommentResponseDTO updateComment(@PathVariable Long todoId, @PathVariable Long commentId, @RequestBody CommentRequestDTO requestDTO){
 
         return commentService.updateComment(todoId, commentId, requestDTO);
     }
 
-    @DeleteMapping("/{todoId}/{commentId}")
+    @DeleteMapping("/comment/{todoId}/{commentId}")
     public ResponseEntity<String> deleteComment(@PathVariable Long todoId, @PathVariable Long commentId, @RequestHeader Long userId) {
 
         commentService.deleteComment(todoId, commentId, userId);
