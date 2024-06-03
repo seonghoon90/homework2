@@ -38,10 +38,10 @@ public class TodoService {
         Todo todo = checkPWAndGetTodo(todoId, dto.getPassword());
 
         todo.setTitle(dto.getTitle());
-            todo.setContent(dto.getContent());
-            todo.setUserName(dto.getUserName());
+        todo.setContent(dto.getContent());
+        todo.setUserName(dto.getUserName());
 
-            return todoRepository.save(todo);
+        return todoRepository.save(todo);
     }
 
     private Todo checkPWAndGetTodo(long todoId, String password) {
@@ -49,9 +49,9 @@ public class TodoService {
 
         // 비밀번호 체크
         if (todo.getPassword() != null
-            && !Objects.equals(todo.getPassword(), password)) {
+                && !Objects.equals(todo.getPassword(), password)) {
             throw new IllegalArgumentException("Passwords don't match");
-    }
+        }
         return todo;
     }
 

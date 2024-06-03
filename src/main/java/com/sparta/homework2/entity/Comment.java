@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-@RestController
 @Entity
 @Getter
 @Setter

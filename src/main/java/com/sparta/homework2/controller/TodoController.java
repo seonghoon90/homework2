@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RequestMapping("/v1.0/todo")
+@RequestMapping("/v1/todo")
 @RestController
 @AllArgsConstructor
 public class TodoController {
@@ -37,7 +37,7 @@ public class TodoController {
         List<Todo> todos = todoService.getTodos();
         List<TodoResponseDTO> response = todos.stream()
                 .map(TodoResponseDTO::new)
-                .collect(Collectors.toList());
+                .toList();
         return ResponseEntity.ok().body(response);
     }
 
