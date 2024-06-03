@@ -9,7 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CommentRequestDTO {
-    @NotEmpty
     private String comment;
     private Long userId;
     private Long todoId;
