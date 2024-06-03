@@ -32,7 +32,7 @@ public class CommentService {
 
     @Transactional
     public CommentResponseDTO updateComment(Long todoId, Long commentId, CommentRequestDTO requestDTO) {
-        Todo todo = todoRepository.findById(todoId).orElseThrow(
+        todoRepository.findById(todoId).orElseThrow(
                 () -> new IllegalArgumentException("선택한 일정이 없습니다.")
         );
 
@@ -51,7 +51,7 @@ public class CommentService {
 
     public void deleteComment(Long todoId, Long commentId, Long userId) {
 
-        Todo todo = todoRepository.findById(todoId).orElseThrow(
+        todoRepository.findById(todoId).orElseThrow(
                 () -> new IllegalArgumentException("선택한 일정이 없습니다.")
         );
         Comment comment = commentRepository.findById(commentId).orElseThrow(
