@@ -1,6 +1,8 @@
 package com.sparta.homework2.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,8 +25,12 @@ public class Todo {
 
     private String content;
 
+    @Column
+    @Email
     private String userName;
 
+    @Column(length = 100, nullable = false)
+    @NotEmpty
     private String password;
 
     private LocalDateTime createdAt;
