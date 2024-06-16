@@ -37,7 +37,7 @@ public class TodoController {
         List<Todo> todos = todoService.getTodos();
         List<TodoResponseDTO> response = todos.stream()
                 .map(TodoResponseDTO::new)
-                .collect(Collectors.toList());
+                .toList();
         return ResponseEntity.ok().body(response);
     }
 
